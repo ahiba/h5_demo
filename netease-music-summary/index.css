@@ -1,0 +1,274 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+html, body {
+  width: 100%;
+  height: 100%;
+}
+.swiper-container {
+  width: 100%;
+  height: 100%;
+}
+.swiper-slide {
+  overflow: hidden;
+}
+
+/* 音符部分 */
+.word-box {
+  position: absolute;
+  right: 20px;
+  top: 40px;
+  font-size: 12px;
+  line-height: 20px;
+  text-align: right;
+}
+
+.word1, .word2, .word3 {
+  margin-bottom: 15px;
+}
+
+.f-animLineUp {
+  opacity: 0;
+  transform: translateY(6px);
+}
+
+.swiper-slide-active .f-animLineUp {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 1.2s,transform 1s;
+}
+
+.letter-red {
+  color: red;
+}
+
+
+/* 第二屏 秋千*/
+.view.special {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  /* top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0; */
+  background-image: 
+  linear-gradient(60deg,#f8ddd1,#faece5 73%,#fad2c0);
+}
+
+.sun {
+  width: 283px;
+  height: 283px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  background: url("./assert/swing/sun.png") no-repeat;
+  background-size: 100%;
+}
+
+/* .art {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 375px;
+  height: 667px;
+  background: url('./assert/swing/swing.png') no-repeat;
+  background-size: 375px 667px;
+  transform-origin: top right;
+  transform: scale(0.5);
+} */
+
+/*swig秋千动画*/
+.art {
+  position: absolute;
+  top: -140px;
+  right: -100px;
+  width: 750px;
+  height: 1334px;
+  transform: scale(0.5);
+  transform-origin: top right;
+}
+.swing {
+  width: 478px;
+  height: 1038px;
+  background: url('./assert/swing/swing.png') no-repeat;
+  animation: ani1_qiuqian 6s cubic-bezier(.455,.03,.515,.955) infinite;
+  transform-origin: -16.10878661% -29.76878613%;
+}
+
+@keyframes ani1_qiuqian {
+  0% {
+    transform: rotateZ(0deg);
+  }
+  50% {
+    transform: rotateZ(30deg);
+  }
+  100% {
+    transform: rotateZ(0deg);
+  }
+}
+
+.swing .leg2 {
+  position: absolute;
+  /* top: 950px;
+  left: 160px; */
+  left: 185.375px;
+  top: 958px;
+  width: 130px;
+  height: 32px;
+  background: url('./assert/swing/leg2.png') no-repeat;
+  animation: ani2_leg2 8s cubic-bezier(.455,.03,.515,.955) infinite;
+  transform-origin: 91.1538461538462% 33.59375%;
+}
+
+@keyframes ani2_leg2 {
+  0% {
+    transform: rotate(0deg);
+  }
+  25% {
+      transform: rotate(-86.98199658deg);
+  }
+  50% {
+      transform: rotate(0deg);
+  }
+  75% {
+      transform: rotate(-86.98199658deg);
+  }
+  100% {
+      transform: rotate(0deg);
+  }
+}
+.swing .leg2 .jiojio {
+  position: absolute;
+  background: url('./assert/swing/leg2-part.png') no-repeat;
+  width: 57px;
+  height: 44px;
+  left: -27.75px;
+  top: -10.5px;
+  
+}
+
+
+.swing .leg1 {
+  position: absolute;
+  width: 63px;
+  height: 130px;
+  left: 290.375px;
+  top: 955.25px;
+  background: url('./assert//swing/leg1.png') no-repeat;
+  animation: ani3_leg1 8s cubic-bezier(.455,.03,.515,.955) infinite;
+  transform-origin: 17.8571428571429% 13.3653846153846%;
+}
+
+@keyframes ani3_leg1 {
+  0% {
+    transform: rotate(0deg);
+  }
+  25% {
+      transform: rotate(108.97744399deg);
+  }
+  50% {
+      transform: rotate(0deg);
+  }
+  75% {
+      transform: rotate(108.97744399deg);
+  }
+  100% {
+      transform: rotate(0deg);
+  }
+}
+
+.swing .leg1 .jiojio {
+  position: absolute;
+  width: 39px;
+  height: 62px;
+  left: 26.25px;
+  top: 102.5px;
+  background: url('./assert/swing/leg1-part.png') no-repeat;
+}
+
+.swing .neck, .swing .head {
+  position: absolute;
+  top: 855.5px;
+  left: 451.125px;
+  width: 51px;
+  height: 42px;
+  background: url('./assert/swing/neck.png') no-repeat;
+}
+.swing .head {
+  background: url('./assert/swing/head.png') no-repeat;
+}
+
+.swing .head .part {
+  background: url('./assert/swing/head-part.png') no-repeat;
+  left: 20px;
+  top: 2px;
+  width: 40px;
+  height: 47px;
+  position: absolute;
+}
+
+
+/*文字模糊 旋转效果*/
+.word {
+  display: inline-block;
+  width: 120px;
+  height: 120px;
+  background: url('./assert/word/word-005.png');
+  background-size: 120px;
+  background-repeat: no-repeat;
+}
+.swiper-slide-active .word {
+  filter: blur(10px);
+  display: inline-block;
+  width: 120px;
+  height: 120px;
+  background: url('./assert/word/word-005.png');
+  background-size: 120px;
+  background-repeat: no-repeat;
+  animation: blurAppear 2s linear forwards;
+}
+
+@keyframes blurAppear {
+  0% {
+    filter: blur(10px);
+    transform: scale(.8);
+    opacity: 0;
+  }
+
+  100% {
+    filter: blur(0);
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.u-word {
+  animation: rotate 2s ease-in-out both;
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  25% {
+    transform: rotate(2deg);
+  }
+
+  50% {
+    transform: rotate(0);
+  }
+
+  75% {
+    transform: rotate(-2deg);
+  }
+
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+
